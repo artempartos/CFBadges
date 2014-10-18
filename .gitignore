@@ -14,7 +14,7 @@
 /log/*.log
 /tmp
 
-config/database.yml
+/config/database.yml
 
 coverage/
 Vagrantfile
@@ -29,4 +29,3 @@ dump.rd
 *.swo
 vendor/bundle
 test/reports
-config/database.yml
