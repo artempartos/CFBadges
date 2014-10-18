@@ -1,13 +1,22 @@
 ENV['RAILS_ENV'] ||= 'test'
+
 require File.expand_path('../../config/environment', __FILE__)
+require 'wrong'
 require 'rails/test_help'
 
-class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  fixtures :all
+Dir[File.expand_path('../support/**/*.rb', __FILE__)].sort.each { |f| require f}
 
-  # Add more helper methods to be used by all tests here...
+require 'wrong/adapters/minitest'
+require "minitest/pride"
+
+Wrong.config.color
+
+FactoryGirl.reload
+FactoryGirlSequences.reload
+Wrong.config.color
+
+class ActiveSupport::TestCase
+  include Wrong
+  ActiveRecord::Migration.maintain_test_schema!
+  include FactoryGirl::Syntax::Methods
 end
