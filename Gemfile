@@ -9,6 +9,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem 'filepicker-rails'
 
 gem 'configus'
 gem 'russian'
