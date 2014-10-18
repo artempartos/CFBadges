@@ -29,3 +29,4 @@ dump.rd
 *.swo
 vendor/bundle
 test/reports
+config/database.yml
