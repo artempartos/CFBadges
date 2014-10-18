@@ -13,7 +13,16 @@ var Canvas = fabric.util.createClass(fabric.Canvas, {
       width: object.width,
       height: object.height
     });
+  },
+
+  addSelection: function(attr) {
+    var rect = new RectPrimitive();
+    this.add(rect);
+    rect.bringForward();
+    this.renderAll();
+    console.log(this);
   }
+
 });
 
 var Texture = fabric.util.createClass(fabric.Image, {
@@ -43,6 +52,17 @@ var Texture = fabric.util.createClass(fabric.Image, {
 
 });
 
-fabric.Group.prototype.lockRotation = true;
-fabric.Group.prototype.hasRotatingPoint = false;
-fabric.Group.prototype.hasControls = false;
+var RectPrimitive = fabric.util.createClass(fabric.Rect, {
+  initialize: function() {
+    var options = {
+      hasRotatingPoint: false,
+      lockRotation: true,
+      // selectable: true,
+      width: 200,
+      height: 50,
+      fill: 'red',
+      opacity: 0.3
+    };
+    this.callSuper("initialize", options);
+  }
+});

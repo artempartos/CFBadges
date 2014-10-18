@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require lodash
 //= require fabric
 //= require fabric_patch
+//= require papaparse.js
 //= require badge.js
 //= require_tree .

@@ -12,6 +12,19 @@ window.onload = function () {
 
   // loadRastr(url, canvas);
   loadVector(url, canvas);
+
+
+  var result;
+  Papa.parse("csv_example.csv", {
+    download: true,
+    preview: 1,
+    complete: function(results) {
+      result = results.data[0];
+      _.each(result, function(attr){
+        canvas.addSelection(attr);
+      }, this);
+    }
+  });
 };
 
 function loadRastr(url, canvas) {
@@ -20,6 +33,7 @@ function loadRastr(url, canvas) {
     canvas.updateDimensions(background);
   });
   canvas.add(background).renderAll();
+  background.sendToBack();
 }
 
 function loadVector(url, canvas) {
@@ -27,6 +41,7 @@ function loadVector(url, canvas) {
     options.selectable = false;
     var obj = fabric.util.groupSVGElements(objects, options);
     canvas.add(obj).renderAll();
+    obj.sendToBack();
     canvas.updateDimensions(obj);
   });
 }
