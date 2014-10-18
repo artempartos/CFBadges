@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.1.1)
       actionpack (= 4.1.1)
@@ -80,6 +81,8 @@ GEM
     json (1.8.1)
     kgio (2.9.2)
     libv8 (3.16.14.7)
+    lodash-rails (2.4.1)
+      railties (>= 3.1)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -103,6 +106,7 @@ GEM
       railties (= 4.1.1)
       sprockets-rails (~> 2.0)
     rails-assets-fabric (1.4.11)
+    rails-assets-papaparse.js (3.1.2)
     railties (4.1.1)
       actionpack (= 4.1.1)
       activesupport (= 4.1.1)
@@ -187,9 +191,11 @@ DEPENDENCIES
   filepicker-rails
   haml-rails
   jquery-rails
+  lodash-rails
   pg
   rails (= 4.1.1)
   rails-assets-fabric
+  rails-assets-papaparse.js
   russian
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
