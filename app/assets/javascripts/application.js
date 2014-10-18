@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require bootstrap
+//= require fabric
+//= require fabric_patch
+//= require badge.js
+//= require_tree .

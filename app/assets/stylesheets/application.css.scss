@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require badge.css
  *= require_self
  */
 @import "bootstrap";
