@@ -1,3 +1,4 @@
-id,company,name,family,nick,project
-1,Undev,Artem,Petrov,Partos,CFBadges
-2,Undev,Mikhail,Dronov,mechanic,CFBadges
+id,company,first name,last name,nick,project,link to app
+1,Undev,Artem,Petrov,Partos,CFBadges,http://cfbadges.r14.railsrumble.com
+2,Undev,Mikhail,Dronov,mechanic,CFBadges,http://cfbadges.r14.railsrumble.com
+2,Undev,Alex,Kurichev,nick,CFBadges,http://cfbadges.r14.railsrumble.com

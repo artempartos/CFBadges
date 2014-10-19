@@ -16,9 +16,10 @@
 //= require js-routes
 //= require lodash
 //= require angular
+//= require angular-bootstrap
 //= require fabric
 //= require fabric_patch
 //= require bootstrap-filestyle
 //= require papaparse.js
 
-CFBadges = angular.module("CFBadges",[]);
+CFBadges = angular.module("CFBadges",['ui.bootstrap']);

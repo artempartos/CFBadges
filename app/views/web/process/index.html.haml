@@ -1,13 +1,14 @@
 #processApp{"ng-controller" => "processController"}
   .row
-    .col-md-9
+    .col-md-8
       .canvas-wrap
         %canvas#process
 
-    .col-md-3
+    .col-md-4
       .row.pull-right
         .col-md-12
           %input.filestyle#csv{type: "file", "onchange" => "angular.element(this).scope().parseAndCreateCheckbox(this)", accept: "text/csv, application/csv", "data-buttonName" => "btn-primary"}
+
       .row.pull-right
         .col-md-12
           %div.btn.btn-primary{'ng-click' => "generateSVG()"}
@@ -24,3 +25,8 @@
             .checkbox
               %input{type: "checkbox", "ng-model" => "csvFieldsVisible[field]", "ng-click" => 'toggleCanvasVisible(field)'}
                 {{field | capitalize}}
+
+      .row
+        .col-md-12
+          %progressbar.progress-striped.active{"ng-show" => "showProgressBar", value: "orderCountCurrent / orderCount * 100"}
+            {{orderCountCurrent}} / {{orderCount}}

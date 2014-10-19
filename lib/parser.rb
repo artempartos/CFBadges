@@ -11,7 +11,9 @@ class Parser
 			attribute = svg.attribute('style').value.split('svg_').last.chop
 			attribute_value = params[attribute]
 			height = svg.attribute('height').to_s.to_f
-			text = "<text x='#{x.to_s}' y='#{(y + height).to_s}' font-family='Verdana' font-size='#{(0.75 * height).to_i.to_s}' fill='black' > #{attribute_value} </text>"
+			font_size = (0.75 * height).to_i
+			font_size /= 4 if attribute == 'link to app'
+			text = "<text x='#{x.to_s}' y='#{(y + height).to_s}' font-family='Verdana' font-size='#{font_size.to_s}' fill='black' > #{attribute_value} </text>"
 		end
 
 		xml.xpath('//*[contains(@style,"svg_")]').each_with_index do |element, index|
@@ -20,7 +22,7 @@ class Parser
 
 		uniq = Random.rand.to_s.split('.').last
 
-		File.open(Rails.root.join("public", "name_#{uniq}.svg"), 'w') do |f|
+		File.open(Rails.root.join("tmp", "name_#{uniq}.svg"), 'w') do |f|
 			f.print(xml.to_xml)
 		end
 

@@ -28,6 +28,7 @@ gem "non-stupid-digest-assets"
 gem 'rails-assets-fabric'
 gem 'rails-assets-papaparse.js'
 gem 'rails-assets-bootstrap-filestyle'
+gem 'rails-assets-angular-bootstrap'
 
 gem 'angularjs-rails'
 

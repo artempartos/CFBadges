@@ -1,10 +1,13 @@
-CFBadges.controller("processController", ["$scope", '$window', '$http', function($scope, $window, $http) {
+CFBadges.controller("processController", ["$scope", '$window', '$http', '$timeout', function($scope, $window, $http, $timeout) {
   "use strict";
 
   $scope.csvFile = undefined;
   $scope.csvFields = [];
   $scope.csvFieldsVisible = {};
   $scope.canvasPrimitives = {};
+  $scope.showProgressBar = false;
+  $scope.orderCount = 0;
+  $scope.orderCountCurrent = 0;
 
   var initialize = function() {
     var canvasElement = "process";
@@ -69,6 +72,8 @@ CFBadges.controller("processController", ["$scope", '$window', '$http', function
       svg: $scope.canvas.toSVG()
     };
 
+    $scope.initProgressBar();
+
     $http.post(Routes.api_generate_index_path(), params).
       success(function(data, status, headers, config) {
         console.log(data, status, headers, config);
@@ -107,6 +112,37 @@ CFBadges.controller("processController", ["$scope", '$window', '$http', function
     $scope.canvasPrimitives[field] = undefined;
   };
 
+  $scope.initProgressBar = function() {
+    $scope.orderCount = _.size($scope.csvData) - 1;
+    $scope.orderCountCurrent = 0;
+    $scope.showProgressBar = true;
+    $scope.tick();
+  };
+
+  $scope.tick = function() {
+    $timeout(function() {
+      if ($scope.orderCountCurrent < $scope.orderCount) {
+        $scope.tick();
+        $scope.orderCountCurrent += 1;
+        $scope.apply();
+      } else {
+        $scope.getLink();
+      }
+    }, 3000);
+  };
+
+  $scope.getLink = function() {
+    // $http.get(Routes.api_generate_index_path(), params).
+      // success(function(data, status, headers, config) {
+        // console.log(data, status, headers, config);
+      // }).
+      // error(function(data, status, headers, config) {
+        // console.log("Sorry, error :(");
+      // });
+  };
+
   initialize();
+
+
 
 }]);
