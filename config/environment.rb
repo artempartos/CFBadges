@@ -6,6 +6,6 @@ Rails.application.initialize!
 
 module Badge
 	class Application < Rails::Application
-		config.filepicker_rails.api_key = configus.filepicker_api_key
+		config.filepicker_rails.api_key = ENV['FILEPICKER_API_KEY']
 	end
 end
