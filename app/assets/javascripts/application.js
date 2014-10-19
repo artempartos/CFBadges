@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require js-routes
 //= require lodash
 //= require angular
 //= require fabric

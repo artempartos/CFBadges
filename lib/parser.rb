@@ -1,40 +1,44 @@
+require 'nokogiri'
+
 class Parser
-	require 'nokogiri'
-	require 'open-uri'
 
-	def read_csv
-		filename = Rails.root.join("public", "csv_example.csv")
-		file = File.new(filename, 'r')
+	def self.make_svg(sample_svg, params)
+		xml = Nokogiri::XML sample_svg
 
-		file.each_line("\n") do |row|
-			columns = row.split(",")
-			p columns
+		svgs = xml.xpath('//*[contains(@style,"svg_")]').map do |svg|
+			x = svg.attribute('x').to_s.to_f
+			y = svg.attribute('y').to_s.to_f
+			attribute = svg.attribute('style').value.split('svg_').last.chop
+			attribute_value = params[attribute]
+			height = svg.attribute('height').to_s.to_f
+			text = "<text x='#{x.to_s}' y='#{(y + height).to_s}' font-family='Verdana' font-size='#{(0.75 * height).to_i.to_s}' fill='blue' > #{attribute_value} </text>"
 		end
+
+		xml.xpath('//*[contains(@style,"svg_")]').each_with_index do |element, index|
+			element.replace(svgs[index])
+		end
+
+		uniq = Random.rand.to_s.split('.').last
+
+		File.open(Rails.root.join("public", "name_#{uniq}.svg"), 'w') do |f|
+			f.print(xml.to_xml)
+		end
+
 	end
 
-	def read_xml
-		file = File.read(Rails.root.join("public", "123.svg"))
-		xml = Nokogiri::XML file
+	# def read_xml
 
-		svg_name = xml.xpath('//*[contains(@style,"svg_nick")]')
-		p svg_name
-		x = svg_name.attribute('x').to_s.to_f
-		y = svg_name.attribute('y').to_s.to_f
-		height = svg_name.attribute('height').to_s.to_f
-		text = "<text x='#{x.to_s}' y='#{(y + height).to_s}' font-family='Verdana' font-size='#{(0.75 * height).to_i.to_s}' fill='blue' > Mechanic </text>"
-		p text
+		# p text
 
-		xml.xpath('//*[contains(@style,"svg_nick")]').each do |element|
-			element.replace(text)
-		end
-		p "after removing"
-		svg_name = xml.xpath('//*[contains(@style,"svg_nick")]')
-		p svg_name
-		p xml
+		# xml.xpath('//*[contains(@style,"svg_nick")]').each do |element|
+			# element.replace(text)
+		# end
+		# p "after removing"
+		# svg = xml.xpath('//*[contains(@style,"svg_nick")]')
+		# p svg_name
+		# p xml
 
-
-
-		File.open(Rails.root.join("public", "321.svg"), 'w') { |f| f.print(xml.to_xml) }
-	end
+		# File.open(Rails.root.join("public", "321.svg"), 'w') { |f| f.print(xml.to_xml) }
+	# end
 
 end

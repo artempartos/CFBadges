@@ -20,6 +20,9 @@ gem 'unicorn-rails'
 
 gem 'lodash-rails'
 
+gem 'js-routes'
+gem 'sinatra', '>= 1.3.0', :require => nil
+
 gem "non-stupid-digest-assets"
 
 gem 'rails-assets-fabric'

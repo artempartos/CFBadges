@@ -3,15 +3,14 @@ module Workers
 
     include Sidekiq::Worker
 
-    queue :index_query
-    retry_count configus.workers.retry_count.index
+    queue :badge_query
 
     def self.defer(params)
       perform_async(params)
     end
 
-    def perform(options)
-      # TODO 
+    def perform(params)
+      ::Parser.make_svg(params['svg'], params['options'])
     end
 
   end
