@@ -1,0 +1,105 @@
+%body
+  / Header
+  .intro-header
+    .container
+      .row
+        .col-lg-12
+          .intro-message
+            %h1 Make thousands badges
+            %h1 for your event
+            %h3 by using the one mockup and list of participants.
+            %hr.intro-divider
+              %ul.list-inline.intro-social-buttons
+                %li
+                  %a.btn.btn-default.btn-lg{:href => "#go"}
+                    %i.fa.fa-fw
+                    %span.network-name How it work?
+    / /.container
+  / /.intro-header
+  / Page Content
+  %a{name: "go"}
+  .content-section-b.go
+    .container
+      .row
+        .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+          %hr.section-heading-spacer
+            .clearfix
+            %h2.section-heading
+              Usually designers edit one mockup of badges by changing few fields and save it lots of time.
+            %p.lead
+              But now they shouldn't do it.
+        .col-lg-5.col-sm-pull-6.col-sm-6
+          %img.img-responsive{:alt => "", :src => "assets/baddd.png"}
+  .content-section-a
+    .container
+      .row
+        .col-lg-5.col-sm-6
+          %hr.section-heading-spacer
+            .clearfix
+            %h2.section-heading
+              Upload the mockup of badge
+              <br>in SVG format
+            %p.lead
+              After that upload the list of your participants in csv format.
+              We will support other formats of input files in the nearest future.
+        .col-lg-5.col-lg-offset-2.col-sm-6
+          %img.img-responsive{:alt => "", :src => "assets/ipad.png"}
+    / /.container
+  / /.content-section-a
+  .content-section-b
+    .container
+      .row
+        .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+          %hr.section-heading-spacer
+            .clearfix
+            %h2.section-heading
+              Check the fields that must
+              %br be at the badge
+            %p.lead
+              and press the button 'Generate'. Wait some minutes for processing your csv-file and generating a single images.
+              We take the fields about your participants and put them to single images automatically.
+        .col-lg-5.col-sm-pull-6.col-sm-6
+          %img.img-responsive{:alt => "", :src => "assets/dog.png"}
+    / /.container
+  / /.content-section-b
+  .content-section-a
+    .container
+      .row
+        .col-lg-5.col-sm-6
+          %hr.section-heading-spacer
+            .clearfix
+            %h2.section-heading
+              Yay! Now you can download your badges in a zip-archive.
+            %p.lead
+              We created this service at RailsRumble 2014 for 2 days and hope that our prototype will be useful for you.
+    / /.container
+  / /.content-section-a
+  .banner
+    .container
+      .row
+        .col-lg-6
+          %h2 Let's get started!
+        .col-lg-6
+          %ul.list-inline.banner-social-buttons
+            %li
+              %a.btn.btn-default.btn-lg{:href => "/load"}
+                %i.fa.fa-twitter.fa-fw
+                %span.network-name Go to make badges
+    / /.container
+  / /.banner
+  / Footer
+  %footer
+    .container
+      .row
+        .col-lg-12
+          %ul.list-inline
+            %li
+              %a{:href => "#"} Home
+          %p.copyright.text-muted.small Was made at RailsRumble 2014.
+:javascript
+  var rumbleBannerBackgroundColor, rumbleBannerTextColor, rumbleBannerLinkColor, rumbleBannerPlacement;
+  rumbleBannerBackgroundColor = "#161616";
+  rumbleBannerTextColor = "#b0b0b0";
+  rumbleBannerLinkColor = "#ffffff";
+  rumbleBannerPlacement = "top"; // Optionally replace with "bottom".
+%script{:src => "https://d4nnn7wspfa3h.cloudfront.net/banner-2014.js", :type => "text/javascript"}

@@ -1,0 +1,9 @@
+= filepicker_js_include_tag
+
+.row-fluid
+  .span6.well
+    %center
+      %h2 Please load your svg badge here:
+      = form_for @attachment, as: :attachment, url: load_index_path(@attachment) do |f|
+        = f.filepicker_field :file_url, dragdrop: true, onchange: 'onPhotoUpload(event)'
+        = f.submit class: "btn btn-primary"
