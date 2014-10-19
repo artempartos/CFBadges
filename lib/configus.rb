@@ -1,12 +1,12 @@
 Configus.build Rails.env do
 
 	env :production do
-		filepicker_api_key -> { ENV['FILEPICKER_API_KEY'] }
+		filepicker_api_key -> { "AHTdvfi0ISgeiLtYvjaW2z" }
 
 		workers do
 			retry_count 5
 		end
-		
+
 	end
 
   env :staging, parent: :production do
