@@ -14,9 +14,10 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require lodash
+//= require angular
 //= require fabric
 //= require fabric_patch
 //= require bootstrap-filestyle
 //= require papaparse.js
-//= require badge.js
-//= require_tree .
+
+CFBadges = angular.module("CFBadges",[]);

@@ -24,12 +24,15 @@ gem 'rails-assets-fabric'
 gem 'rails-assets-papaparse.js'
 gem 'rails-assets-bootstrap-filestyle'
 
+gem 'angularjs-rails'
+
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer',  platforms: :ruby
 
 gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0',          group: :doc
+
 
 group :test do
   gem 'webmock'
