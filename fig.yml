@@ -2,6 +2,11 @@ db:
   image: orchardup/postgresql
   ports:
     - "5432"
+redis:
+  image: orchardup:/redis
+  ports:
+    - "6379:6379"
+    - "6380:6380"
 badges:
   build: .
   command: bundle exec rackup -p 3000
@@ -11,3 +16,4 @@ badges:
     - "3000:3000"
   links:
     - db
+    - redis
