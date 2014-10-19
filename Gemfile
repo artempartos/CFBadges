@@ -8,6 +8,8 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'filepicker-rails'
+gem 'nokogiri'
+gem 'jazz_hands'
 
 gem 'configus'
 gem 'russian'
