@@ -12,13 +12,17 @@ gem 'filepicker-rails'
 gem 'configus'
 gem 'russian'
 
+gem 'gon'
+
 gem 'unicorn-rails'
 
 gem 'lodash-rails'
 
+gem "non-stupid-digest-assets"
+
 gem 'rails-assets-fabric'
 gem 'rails-assets-papaparse.js'
-
+gem 'rails-assets-bootstrap-filestyle'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'

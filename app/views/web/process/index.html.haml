@@ -1,4 +1,10 @@
-.canvas-wrap
-  %canvas#process
+.row
+  .col-md-6
+    .canvas-wrap
+      %canvas#process
 
-%input{"type" => "file", "id" => "files"}
+  .col-md-4
+    %input.filestyle#csv{type: "file", onChange: 'parseAndCreateSelection()', accept: "text/csv, application/csv", "data-buttonName" => "btn-primary"}
+  .col-md-2
+    %div.btn.btn-primary{onClick: "showCanvasSVG()"}
+      Show SVG

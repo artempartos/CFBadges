@@ -6,25 +6,11 @@ window.onload = function () {
   canvas = new Canvas(canvasElement);
 
   // TODO Write dispatcher
-
   // var url = 'test.jpg';
-  var url = 'badge.svg';
-
+  // var url = 'badge.svg';
+  var url = gon.file.file_url;
   // loadRastr(url, canvas);
   loadVector(url, canvas);
-
-
-  var result;
-  Papa.parse("csv_example.csv", {
-    download: true,
-    preview: 1,
-    complete: function(results) {
-      result = results.data[0];
-      _.each(result, function(attr){
-        canvas.addSelection(attr);
-      }, this);
-    }
-  });
 };
 
 function loadRastr(url, canvas) {
@@ -44,4 +30,26 @@ function loadVector(url, canvas) {
     obj.sendToBack();
     canvas.updateDimensions(obj);
   });
-}
+};
+
+function parseAndCreateSelection() {
+  var result;
+  var csvEl = $('#csv');
+  var csvFile = csvEl.val().replace(/.+[\\\/]/, "");
+  canvas.clearFromAttrs();
+
+  Papa.parse(csvFile, {
+    download: true,
+    preview: 1,
+    complete: function(results) {
+      result = results.data[0];
+      _.each(result, function(attr){
+        canvas.addSelection(attr);
+      }, this);
+    }
+  });
+};
+
+function showCanvasSVG() {
+  window.open('data:image/svg+xml;utf8,' + encodeURIComponent(canvas.toSVG()));
+};

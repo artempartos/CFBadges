@@ -16,6 +16,7 @@
 //= require lodash
 //= require fabric
 //= require fabric_patch
+//= require bootstrap-filestyle
 //= require papaparse.js
 //= require badge.js
 //= require_tree .

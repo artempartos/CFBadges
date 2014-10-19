@@ -8,5 +8,6 @@ Bundler.require(*Rails.groups)
 
 module Badge
   class Application < Rails::Application
+
   end
 end
