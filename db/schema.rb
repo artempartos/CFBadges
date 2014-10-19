@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019170605) do
+ActiveRecord::Schema.define(version: 20141019220605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attachments", force: true do |t|
     t.string   "file_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "order", force: true do |t|
+    t.integer  "csv_count"
+    t.integer  "csv_actual_count"
+    t.string   "archive_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
