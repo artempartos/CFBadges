@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20141019220605) do
     t.datetime "updated_at"
   end
 
-  create_table "order", force: true do |t|
+  create_table "orders", force: true do |t|
     t.integer  "csv_count"
     t.integer  "csv_actual_count"
     t.string   "archive_url"

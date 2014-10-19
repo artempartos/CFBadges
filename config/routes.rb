@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :generate, only: [:create, :show]
+		resources :orders, only: [:get_archive_url]
   end
 
 end
