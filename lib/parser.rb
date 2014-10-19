@@ -15,8 +15,9 @@ class Parser
 	def read_xml
 		file = File.read(Rails.root.join("public", "123.svg"))
 		xml = Nokogiri::XML file
-		p xml
-		p xml.xpath('//name')
+
+		atr = xml.css('//g[contains(@style,"name")]').first
+		p atr
 	end
 
 end
