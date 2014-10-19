@@ -1,0 +1,4 @@
+= filepicker_js_include_tag
+= form_for @attachment, as: :attachment, url: load_index_path(@attachment) do |f|
+  = f.filepicker_field :file_url, dragdrop: true, onchange: 'onPhotoUpload(event)'
+  = f.submit
