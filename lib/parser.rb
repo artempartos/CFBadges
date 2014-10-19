@@ -11,7 +11,7 @@ class Parser
 			attribute = svg.attribute('style').value.split('svg_').last.chop
 			attribute_value = params[attribute]
 			height = svg.attribute('height').to_s.to_f
-			text = "<text x='#{x.to_s}' y='#{(y + height).to_s}' font-family='Verdana' font-size='#{(0.75 * height).to_i.to_s}' fill='blue' > #{attribute_value} </text>"
+			text = "<text x='#{x.to_s}' y='#{(y + height).to_s}' font-family='Verdana' font-size='#{(0.75 * height).to_i.to_s}' fill='black' > #{attribute_value} </text>"
 		end
 
 		xml.xpath('//*[contains(@style,"svg_")]').each_with_index do |element, index|
