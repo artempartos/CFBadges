@@ -7,7 +7,7 @@ class Web::LoadController < Web::ApplicationController
 	def create
 		Attachment.create(attachment_params)
 		session[:file_url] = attachment_params
-		redirect_to load_index_path
+		redirect_to process_index_path
 	end
 
   def index
