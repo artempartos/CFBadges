@@ -42,6 +42,13 @@
             %p.lead
               After that upload the list of your participants in csv format.
               We will support other formats of input files in the nearest future.
+            %p.lead
+              %b Note:
+              you can download prepared
+              %a{:href => "csv_example.csv"} CSV
+              and
+              %a{:href => "badge.svg"} SVG
+              files if you don't want to draw them.
         .col-lg-5.col-lg-offset-2.col-sm-6
           %img.img-responsive{:alt => "", :src => "assets/ipad.png"}
     / /.container
@@ -59,7 +66,10 @@
               and press the button 'Generate'. Wait some minutes for processing your csv-file and generating a single images.
               We take the fields about your participants and put them to single images automatically.
         .col-lg-5.col-sm-pull-6.col-sm-6
-          %img.img-responsive{:alt => "", :src => "assets/dog.png"}
+          %hr.section-heading-spacer
+            .clearfix
+            %h2.section-heading
+              Well done!
     / /.container
   / /.content-section-b
   .content-section-a
