@@ -16,6 +16,17 @@ var Canvas = fabric.util.createClass(fabric.Canvas, {
     });
   },
 
+  removeField: function(field) {
+    var name =  this.makeName(field);
+    console.log(name);
+    console.log(this._objects);
+    _.each(this._objects, function(obj) {
+      if (obj  && obj.name === name) {
+        this.remove(obj);
+      }
+    }, this);
+  },
+
   clearFromAttrs: function() {
     var buf = [];
     _.each(this._objects, function(obj) {
@@ -30,12 +41,16 @@ var Canvas = fabric.util.createClass(fabric.Canvas, {
     this.renderAll();
   },
 
-  addSelection: function(attr) {
+  makeName: function(field) {
+    return "svg_" + field;
+  },
+
+  addField: function(field) {
     var step = 20;
 
-    var name = "svg_" + attr;
+    var name = this.makeName(field);
     var rect = new RectPrimitive(name);
-    var text = new fabric.IText(attr, {
+    var text = new fabric.IText(field, {
       hasRotatingPoint: false,
       lockRotation: true,
       fill: 'black',
@@ -46,7 +61,8 @@ var Canvas = fabric.util.createClass(fabric.Canvas, {
     var group = new fabric.Group([ rect, text ], {
       left: this.offset[0],
       top: this.offset[0],
-      deletable: true
+      deletable: true,
+      name: name
     });
 
     this.offset[0] += step;
@@ -56,6 +72,7 @@ var Canvas = fabric.util.createClass(fabric.Canvas, {
     this.add(group);
     group.bringForward();
     this.renderAll();
+    return group;
   }
 
 });
@@ -114,5 +131,5 @@ var RectPrimitive = fabric.util.createClass(fabric.Rect, {
 });
 
 fabric.IText.prototype.toSVG = function () {
-  return {};
+  return "";
 };

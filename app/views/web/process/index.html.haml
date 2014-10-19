@@ -4,8 +4,16 @@
       .canvas-wrap
         %canvas#process
 
-    .col-md-4
-      %input.filestyle#csv{type: "file", "onchange" => "angular.element(this).scope().parseAndCreateCheckbox(this)", accept: "text/csv, application/csv", "data-buttonName" => "btn-primary"}
-    .col-md-2
-      %div.btn.btn-primary{'ng-click' => "showCanvasSVG()"}
-        Show SVG
+    .col-md-6
+      .row
+        .col-md-9
+          %input.filestyle#csv{type: "file", "onchange" => "angular.element(this).scope().parseAndCreateCheckbox(this)", accept: "text/csv, application/csv", "data-buttonName" => "btn-primary"}
+        .col-md-3
+          %div.btn.btn-primary{'ng-click' => "showCanvasSVG()"}
+            Show SVG
+      .row
+        .col-md-12
+          %div{"ng-repeat" => "field in csvFields"}
+            .checkbox
+              %input{type: "checkbox", "ng-model" => "csvFieldsVisible[field]", "ng-click" => 'toggleCanvasVisible(field)'}
+                {{field | capitalize}}
