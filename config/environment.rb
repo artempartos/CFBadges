@@ -6,7 +6,6 @@ Rails.application.initialize!
 
 module Badge
 	class Application < Rails::Application
-		config.autoload_paths += %W(#{config.root}/lib)
 		config.filepicker_rails.api_key = configus.filepicker_api_key
 	end
 end

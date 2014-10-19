@@ -1,6 +1,7 @@
-CFBadges.controller("processController", ["$scope", '$window', function($scope, $window) {
+CFBadges.controller("processController", ["$scope", '$window', '$http', function($scope, $window, $http) {
   "use strict";
 
+  $scope.csvFile = undefined;
   $scope.csvFields = [];
   $scope.csvFieldsVisible = {};
   $scope.canvasPrimitives = {};
@@ -10,8 +11,8 @@ CFBadges.controller("processController", ["$scope", '$window', function($scope, 
     $scope.canvas = new Canvas(canvasElement);
     // TODO Dispatch type
     var url = gon.file.file_url;
+    // $scope.loadImage(url);
     $scope.loadVector(url);
-    // $scope.loadVector(url);
   };
 
   $scope.loadImage = function(url) {
@@ -37,19 +38,22 @@ CFBadges.controller("processController", ["$scope", '$window', function($scope, 
     var result;
     // TODO remove get from dom
     var csvEl = $('#csv');
-    var csvFile = csvEl.val().replace(/.+[\\\/]/, "");
+    $scope.csvFile = csvEl.val().replace(/.+[\\\/]/, "");
+
+    $scope.file = file;
+
     $scope.canvas.clearFromAttrs();
 
-    Papa.parse(csvFile, {
+    Papa.parse($scope.csvFile, {
       download: true,
-      preview: 1,
       complete: function(results) {
+        console.log("results",results);
         result = results.data[0];
         _.each(result, function(attr){
           $scope.csvFields.push(attr);
           $scope.csvFieldsVisible[attr] = false;
-
         }, this);
+        $scope.csvData = results.data;
         $scope.$apply();
       }
     });
@@ -57,6 +61,21 @@ CFBadges.controller("processController", ["$scope", '$window', function($scope, 
 
   $scope.showCanvasSVG = function() {
     $window.open('data:image/svg+xml;utf8,' + encodeURIComponent($scope.canvas.toSVG()));
+  };
+
+  $scope.generateSVG = function() {
+    var params = {
+      csv_data: $scope.csvData,
+      svg: $scope.canvas.toSVG()
+    };
+
+    $http.post(Routes.api_generate_index_path(), params).
+      success(function(data, status, headers, config) {
+        console.log(data, status, headers, config);
+      }).
+      error(function(data, status, headers, config) {
+        console.log("Sorry, error :(");
+      });
   };
 
   $scope.toggleCanvasVisible = function(field) {

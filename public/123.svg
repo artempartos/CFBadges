@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="480" height="640" style="background-color: #fff" xml:space="preserve"><desc>Created with Fabric.js 1.4.11</desc><defs></defs><g style="stroke: none; stroke-width: 1; stroke-dasharray: ; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: source-over; opacity: 1;" transform="translate(0 0)" >
+<g transform="">
+<image xlink:href="http://blog.railsrumble.com/images/2012/9/rails-rumble-logo-large.png" x="-31.99998" y="8.5" style="stroke: none; stroke-width: 1; stroke-dasharray: ; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: source-over; opacity: 1;" width="542.99999" height="344" preserveAspectRatio="none"></image>
+</g>
+<rect x="13" y="362.5" rx="0" ry="0" width="451.99998" height="267" style="stroke: #000000; stroke-width: 6; stroke-dasharray: ; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #FF0000; fill-rule: source-over; opacity: 1;" transform=""/>
+<g transform="">
+<text font-family="Cursive" font-size="60" font-weight="bold" style="stroke: #000000; stroke-width: 0; stroke-dasharray: NaN; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #000000; fill-rule: source-over; opacity: 1;" transform="translate(108 449.5)"><tspan x="0" y="-39" fill="#000000">Member:</tspan></text>
+</g>
+<g transform="">
+<text font-family="Cursive" font-size="24" font-weight="bold" style="stroke: #000000; stroke-width: 0; stroke-dasharray: NaN; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #000000; fill-rule: source-over; opacity: 1;" transform="translate(38 495.9)"><tspan x="0" y="-15.6" fill="#000000">Project:</tspan></text>
+</g>
+<g transform="">
+<text font-family="Cursive" font-size="24" font-weight="bold" style="stroke: #000000; stroke-width: 0; stroke-dasharray: NaN; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #000000; fill-rule: source-over; opacity: 1;" transform="translate(43 549.9)"><tspan x="0" y="-15.6" fill="#000000">Nick:</tspan></text>
+</g>
+<g transform="">
+<text font-family="Cursive" font-size="24" font-weight="bold" style="stroke: #000000; stroke-width: 0; stroke-dasharray: NaN; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #000000; fill-rule: source-over; opacity: 1;" transform="translate(43 598.9)"><tspan x="0" y="-15.6" fill="#000000">Company:</tspan></text>
+</g>
+<line x1="159" y1="594.5" x2="461.00001" y2="595.5" style="stroke: #000000; stroke-width: 4; stroke-dasharray: ; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: source-over; opacity: 1;" transform=""/>
+<line x1="110" y1="543.5" x2="461.00001" y2="544.5" style="stroke: #000000; stroke-width: 4; stroke-dasharray: ; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: source-over; opacity: 1;" transform=""/>
+<line x1="130" y1="489.5" x2="459.99999" y2="490.5" style="stroke: #000000; stroke-width: 4; stroke-dasharray: ; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: source-over; opacity: 1;" transform=""/>
+</g>
+<g transform="translate(137.5 47.5)">
+<rect x="-127.50000000000009" y="-37.500000000000014" rx="0" ry="0" width="250" height="70" style="stroke: red; stroke-width: 5; stroke-dasharray: 5 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: white; fill-rule: source-over; opacity: 0.7; name: svg_id;" transform=""/>
+</g>
+<g transform="translate(309.42 578.53) scale(1.16 0.68)">
+<rect x="-127.50000000000009" y="-37.50000000000002" rx="0" ry="0" width="250" height="70" style="stroke: red; stroke-width: 5; stroke-dasharray: 5 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: white; fill-rule: source-over; opacity: 0.7; name: svg_company;" transform=""/>
+</g>
+<g transform="translate(177.5 87.5)">
+<rect x="-127.50000000000009" y="-37.50000000000002" rx="0" ry="0" width="250" height="70" style="stroke: red; stroke-width: 5; stroke-dasharray: 5 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: white; fill-rule: source-over; opacity: 0.7; name: svg_name;" transform=""/>
+</g>
+<g transform="translate(290.5 204.5)">
+<rect x="-127.50000000000009" y="-37.50000000000002" rx="0" ry="0" width="250" height="70" style="stroke: red; stroke-width: 5; stroke-dasharray: 5 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: white; fill-rule: source-over; opacity: 0.7; name: svg_family;" transform=""/>
+</g>
+<g transform="translate(285.56 529.67) scale(1.34 0.66)">
+<rect x="-127.50000000000009" y="-37.500000000000014" rx="0" ry="0" width="250" height="70" style="stroke: red; stroke-width: 5; stroke-dasharray: 5 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: white; fill-rule: source-over; opacity: 0.7; name: svg_nick;" transform=""/>
+</g>
+<g transform="translate(301.38 468.81) scale(1.24 0.62)">
+<rect x="-127.50000000000009" y="-37.50000000000002" rx="0" ry="0" width="250" height="70" style="stroke: red; stroke-width: 5; stroke-dasharray: 5 5; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: white; fill-rule: source-over; opacity: 0.7; name: svg_project;" transform=""/>
+</g>
+</svg>

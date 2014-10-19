@@ -8,15 +8,20 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'filepicker-rails'
+gem 'nokogiri'
 
 gem 'configus'
 gem 'russian'
 
 gem 'gon'
+gem 'sidekiq'
 
 gem 'unicorn-rails'
 
 gem 'lodash-rails'
+
+gem 'js-routes'
+gem 'sinatra', '>= 1.3.0', :require => nil
 
 gem "non-stupid-digest-assets"
 

@@ -1,0 +1,8 @@
+---
+:concurrency: 5
+:queues:
+  - [badge_query, 8]
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 5
