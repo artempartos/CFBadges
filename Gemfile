@@ -13,6 +13,7 @@ gem 'configus'
 gem 'russian'
 
 gem 'gon'
+gem 'sidekiq'
 
 gem 'unicorn-rails'
 
