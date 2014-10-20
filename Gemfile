@@ -10,6 +10,9 @@ gem 'carrierwave'
 gem 'filepicker-rails'
 gem 'nokogiri'
 
+gem 'redis'
+gem 'hiredis'
+
 gem 'configus'
 gem 'russian'
 
