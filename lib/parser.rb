@@ -2,14 +2,14 @@ require 'nokogiri'
 
 class Parser
 
-	def self.make_svg(sample_svg, params)
+	def self.make_svg(sample_svg, options)
 		xml = Nokogiri::XML sample_svg
 
 		svgs = xml.xpath('//*[contains(@style,"svg_")]').map do |svg|
 			x = svg.attribute('x').to_s.to_f
 			y = svg.attribute('y').to_s.to_f
 			attribute = svg.attribute('style').value.split('svg_').last.chop
-			attribute_value = params[attribute]
+			attribute_value = options[attribute]
 			height = svg.attribute('height').to_s.to_f
 			font_size = (0.75 * height).to_i
 			font_size /= 4 if attribute == 'link to app'
