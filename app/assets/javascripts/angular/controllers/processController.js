@@ -8,14 +8,16 @@ CFBadges.controller("processController", ["$scope", '$window', '$http', '$timeou
   $scope.showProgressBar = false;
   $scope.orderCount = 0;
   $scope.orderCountCurrent = 0;
+  $scope.orderID = 0;
 
   var initialize = function() {
     var canvasElement = "process";
     $scope.canvas = new Canvas(canvasElement);
     // TODO Dispatch type
-    var url = gon.file.file_url;
+    $scope.orderID = gon.order.id;
+    // scope.orderID = gon.file;
     // $scope.loadImage(url);
-    $scope.loadVector(url);
+    $scope.loadVector(gon.order.image.url);
   };
 
   $scope.loadImage = function(url) {
@@ -40,14 +42,11 @@ CFBadges.controller("processController", ["$scope", '$window', '$http', '$timeou
   $scope.parseAndCreateCheckbox = function(file) {
     var result;
     // TODO remove get from dom
-    var csvEl = $('#csv');
-    $scope.csvFile = csvEl.val().replace(/.+[\\\/]/, "");
 
-    $scope.file = file;
-
+    var csvEl = $('#csv')[0];
     $scope.canvas.clearFromAttrs();
 
-    Papa.parse($scope.csvFile, {
+    Papa.parse(csvEl.files[0], {
       download: true,
       complete: function(results) {
         console.log("results",results);
@@ -68,15 +67,14 @@ CFBadges.controller("processController", ["$scope", '$window', '$http', '$timeou
 
   $scope.generateSVG = function() {
     var params = {
-      csv_data: $scope.csvData,
-      svg: $scope.canvas.toSVG()
+      svg_data: $scope.canvas.toSVG(),
     };
 
     $scope.initProgressBar();
 
-    $http.post(Routes.api_generate_index_path(), params).
-      success(function(data, status, headers, config) {
-        console.log(data, status, headers, config);
+    $http.post(Routes.api_generate_index_path(), {order: params, id: $scope.orderID, csv_data: $scope.csvData}).
+      success(function() {
+        console.log("ok");
       }).
       error(function(data, status, headers, config) {
         console.log("Sorry, error :(");
@@ -124,9 +122,9 @@ CFBadges.controller("processController", ["$scope", '$window', '$http', '$timeou
       if ($scope.orderCountCurrent < $scope.orderCount) {
         $scope.tick();
         $scope.orderCountCurrent += 1;
-        $scope.apply();
+        // $scope.apply();
       } else {
-        $scope.getLink();
+        // $scope.getLink();
       }
     }, 3000);
   };

@@ -9,11 +9,13 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'filepicker-rails'
 gem 'nokogiri'
+gem 'state_machine'
 
 gem 'redis'
 gem 'hiredis'
 
 gem 'configus'
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
 gem 'russian'
 
 gem 'gon'

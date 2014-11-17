@@ -6,8 +6,7 @@ Rails.application.routes.draw do
 
   scope module: :web do
     root to: 'welcome#index'
-		resources :load, only: [:index, :new, :create]
-    resources :process, only: :index
+		resources :orders, only: [:new, :create, :show]
   end
 
   namespace :api do

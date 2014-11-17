@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( process.js )
+Rails.application.config.assets.precompile += %w( orders.js )

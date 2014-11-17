@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class Web::LoadControllerTest < ActionController::TestCase
+class Web::OrdersControllerTest < ActionController::TestCase
 
-  test "get success" do
-    get :index
+  test "get new success" do
+    get :new
     assert_response :success
   end
 

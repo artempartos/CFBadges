@@ -1,0 +1,9 @@
+.row-fluid
+  .span6.well
+    %center
+      %h2 Please load your svg badge here:
+      = simple_form_for @order do |f|
+        .row
+          = f.input :image, label: false, input_html: { class: 'filestyle', accept: "image/svg" }
+        .control
+          = f.submit class: "btn btn-primary"

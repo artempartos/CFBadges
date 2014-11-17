@@ -1,8 +1,7 @@
-class Order < ActiveRecord::Base
+class Order::Item < ActiveRecord::Base
+  belongs_to :order
 
-  has_many :items, class_name: "Order::Item"
-
-  mount_uploader :image, ::ImageUploader
+  serialize :params
 
   state_machine :state, initial: :active do
 
